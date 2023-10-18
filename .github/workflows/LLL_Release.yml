@@ -9,30 +9,16 @@ on:
 jobs:
   Release:
     runs-on: ubuntu-latest
-    
-    steps:
-      - name: Clone
-        run: |
-          echo '创建 tree/：'
-          mkdir /home/runner/tree
-          echo '克隆 main 分支：'
-          git clone https://github.com/PJ-568/LLL.git -b main /home/runner/tree/main
-          echo '检查 tree/main：'
-          ls /home/runner/tree/main
-      
+    permissions:
+      contents: write  # To push a branch 
+      pull-requests: write
+
+    steps:      
       - name: Checkout min branch
         uses: actions/checkout@v3
         with:
-          ref: min
-
-      - name: Merge
-        run: |
-          echo '清空 min：'
-          rm -r ./*
-          echo '检查 min：'
-          ls
-          echo '移动 tree/main/* 到 min/：'
-          cp -v -u -r /home/runner/tree/main/* .
+          ref: main
+          submodules: recursive
           
       - name: HTML/CSS/JS Minifier
         uses: docker://devatherock/minify-js:2.0.0
@@ -51,13 +37,11 @@ jobs:
           echo "url-count = ${{ steps.sitemap.outputs.url-count }}"
           echo "excluded-count = ${{ steps.sitemap.outputs.excluded-count }}"
 
-      - name: Push
-        run: |
-          git config --global user.name "PJ569-bot"
-          git config --global user.email "LiuTian-PJ568@PJ568.eu.org"
-          git add -A
-          git commit -m '自动 Release'
-          git push
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.7
+        with:
+          branch: min # The branch the action should deploy to.
+          folder: . # The folder the action should deploy.
 
       - name: Ping Google
         run: curl https://www.google.com/ping?sitemap=https://LLL.PJ568.eu.org/sitemap.xml
