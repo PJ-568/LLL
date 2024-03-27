@@ -410,10 +410,12 @@ body { margin: 0px; padding: 0px; }
 }
 	
 </style>
+	<script src="https://res.zvo.cn/translate/translate.js" type="text/javascript"></script>
+	<script src="js/translate_lib.js" type="text/javascript"></script>
+	<script src="//lib.baomitu.com/pjax/0.2.8/pjax.min.js" type="text/javascript"></script>
+	<script src="js/SetPjax.js" type="text/javascript"></script>
 </head>
 <body style="margin-top: 0; ">
-	<script src="https://res.zvo.cn/translate/translate.js"></script>
-	<script src="js/translate_lib.js"></script>
 	<style>
 		#translate>.translateSelectLanguage {cursor:pointer;position:fixed;right:1rem;top:1rem;font-size:1rem;padding:12px 40px;padding-left:12px 40px;padding-right:0.5rem;border:2px solid #80a70b;border-radius:5px;background-color:#fff;color:#202020}
 		@media screen and (max-width: 980px){#translate>.translateSelectLanguage {font-size:.8rem;padding-left:0.5rem;padding-right:0.5rem;width:6rem}}
@@ -422,7 +424,7 @@ body { margin: 0px; padding: 0px; }
 	<a href="download"class="button-agile"style="position:fixed;left:1rem;top:1rem;background-color: #fff; border:2px solid #80a70b; color: #202020; padding: 12px 40px; border-radius: 5px; text-decoration: none; font-family: 'Open Sans', Arial, sans-serif;font-weight: bold;letter-spacing: .2px;text-transform: uppercase; font-size: 14px;">下载专属软件</a>
 
 	<!-- HEADER -->
-<repeater><table class="banner-image-w3l" width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="background: url(images/banner2.jpg) center center / cover no-repeat;min-height: 590px;">
+<repeater class="pjax-reload"><table class="banner-image-w3l" width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="background: url(images/banner2.jpg) center center / cover no-repeat;min-height: 590px;">
 	<tr>
 		<td style="background-color: rgba(10, 10, 10, 0.46);">
 			<table width="620" border="0" cellspacing="0" cellpadding="0" align="center" class="scale">
@@ -463,7 +465,7 @@ body { margin: 0px; padding: 0px; }
 </table></repeater>
 <!--// HEADER -->
 <!-- Baner 1-->
-		<layout label="Banner 1">
+		<layout class="pjax-reload" label="Banner 1">
 			<table bgcolor="#ffffff" align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td align="center">
@@ -541,7 +543,7 @@ body { margin: 0px; padding: 0px; }
 		<!--end Baner 1-->
 
 	<!-- 3 COLUMNS -->
-<repeater><table width="100%" border="0" cellspacing="0" cellpadding="0" align="center"style="background: url(images/placesbg.jpg) center center / cover no-repeat; height: 600px;">
+<repeater class="pjax-reload"><table width="100%" border="0" cellspacing="0" cellpadding="0" align="center"style="background: url(images/placesbg.jpg) center center / cover no-repeat; height: 600px;">
 	<tr>
 		<td  style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(234, 234, 234);">
 			<table width="620" border="0" cellspacing="0" cellpadding="0" align="center" class="scale">
@@ -663,7 +665,7 @@ body { margin: 0px; padding: 0px; }
 </table></repeater>
 	<!--// 3 COLUMNS -->
 	<!-- Price col -->
-	<repeater><table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="fafafa">
+	<repeater class="pjax-reload"><table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="fafafa">
 		<tr>
 			<td>
 	
@@ -823,7 +825,7 @@ body { margin: 0px; padding: 0px; }
 	</table></repeater>
 	<!-- //Price col -->
 	<!-- places -->
-	<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="fafafa" >
+	<table class="pjax-reload" width="100%" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="fafafa" >
 			<tr>
             <td width="100%" align="center" valign="top"  bgcolor="f2f2f2">
 				<!-- main content -->
@@ -1047,7 +1049,7 @@ body { margin: 0px; padding: 0px; }
 				
 			</td>
 		</tr>
-		<tr>
+		<tr class="pjax-reload">
             <td width="100%" align="center" valign="top"  bgcolor="ebfdff" style="">
 				<!-- main content -->
 				<table class="popular" style="box-shadow: 0px 0px 0px #CAC9C9;"width="620" border="0" cellpadding="0" cellspacing="0" align="center" class="container top-header-left">	
@@ -1167,6 +1169,7 @@ body { margin: 0px; padding: 0px; }
 					</tbody>
 				</table>
 			</td>
+		</tr>
 	</table></repeater>
 	<!-- //Social Media -->
 	<!--cta-->
@@ -1284,6 +1287,9 @@ body { margin: 0px; padding: 0px; }
 		</tr>
 	</table>
 	<!-- end Footer -->
-
+	<div class="loading-bar">
+        <div class="progress"></div>
+    </div>
+	<script src="//lf6-cdn-tos.bytecdntp.com/cdn/expire-1-y/instant.page/5.1.0/instantpage.min.js" type="text/javascript"></script>
 </body>
 </html>
