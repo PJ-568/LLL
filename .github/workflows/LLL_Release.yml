@@ -29,7 +29,7 @@ jobs:
         id: sitemap
         uses: cicirello/generate-sitemap@v1
         with:
-          base-url-path: https://lll.pj568.eu.org/
+          base-url-path: https://lll.pj568.sbs/
 
       - name: Output sitemap stats
         run: |
@@ -44,4 +44,4 @@ jobs:
           folder: . # The folder the action should deploy.
 
       - name: Ping Google
-        run: curl https://www.google.com/ping?sitemap=https://LLL.PJ568.eu.org/sitemap.xml
+        run: curl https://www.google.com/ping?sitemap=https://LLL.PJ568.sbs/sitemap.xml
