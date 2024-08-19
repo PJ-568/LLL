@@ -1,15 +1,21 @@
-var pjax = new Pjax({
-    selectors: [
-        "head meta",
-        "head title",
-        ".pjax-reload"
-    ],
-});
+(function() {
+    let pjax;
 
-// function pjax_reload() {
-//     collapsible();
-// }
+    function initPjax() {
+        try {
+            const Pjax = window.Pjax || function() {};
+            pjax = new Pjax({
+                selectors: [
+                    "head meta",
+                    "head title",
+                    ".pjax-reload"
+                ],
+                cacheBust: false
+            });
+        } catch (e) {
+            console.warn('PJAX 出错：' + e);
+        }
+    }
 
-// document.addEventListener("pjax:complete", function () {
-//     pjax_reload();
-// });
+    document.addEventListener('DOMContentLoaded', () => initPjax());
+}());
