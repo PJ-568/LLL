@@ -1,1 +1,1 @@
-var pjax=new Pjax({selectors:["head meta","head title",".pjax-reload"]});
+!function(){let e;document.addEventListener("DOMContentLoaded",(()=>function(){try{const t=window.Pjax||function(){};e=new t({selectors:["head meta","head title",".pjax-reload"],cacheBust:!1})}catch(e){console.warn("PJAX 出错："+e)}}()))}();
